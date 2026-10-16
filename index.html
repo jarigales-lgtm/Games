@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jacob's Games</title>
+  <meta name="description" content="Rescue Bot Workshop and Orbit Dash VR — two browser games by Jacob.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f4f1ea;
+      --muted: #b7b1a6;
+      --bg: #0c0d12;
+      --rescue: #e7a15a;
+      --orbit: #4df3ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 480px at 12% -10%, rgba(231, 161, 90, 0.22), transparent 60%),
+        radial-gradient(800px 520px at 100% 0%, rgba(77, 243, 255, 0.16), transparent 55%),
+        var(--bg);
+    }
+
+    .wrap {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    header {
+      max-width: 40rem;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Iowan Old Style", serif;
+      font-weight: 500;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+    }
+
+    .lede {
+      margin: 16px 0 0;
+      max-width: 36rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 760px) {
+      .games { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      padding: 24px;
+      border-radius: 22px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid transparent;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .card:hover,
+    .card:focus-visible {
+      transform: translateY(-3px);
+    }
+
+    .card:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+    }
+
+    .rescue {
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.05), transparent 42%),
+        linear-gradient(180deg, #3a291c, #1a1410 70%);
+      border-color: rgba(231, 161, 90, 0.35);
+    }
+
+    .rescue:hover,
+    .rescue:focus-visible { border-color: var(--rescue); }
+
+    .orbit {
+      background:
+        linear-gradient(160deg, rgba(77, 243, 255, 0.12), transparent 46%),
+        linear-gradient(180deg, #10182a, #05060f 72%);
+      border-color: rgba(77, 243, 255, 0.35);
+    }
+
+    .orbit:hover,
+    .orbit:focus-visible { border-color: var(--orbit); }
+
+    .tag {
+      align-self: flex-start;
+      margin-bottom: 18px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .rescue .tag {
+      color: #2a1a10;
+      background: var(--rescue);
+    }
+
+    .orbit .tag {
+      color: #041316;
+      background: var(--orbit);
+    }
+
+    h2 {
+      margin: 0;
+      font-family: Georgia, "Iowan Old Style", serif;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 12px 0 0;
+      color: #ddd6cc;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .go {
+      margin-top: 22px;
+      font-weight: 650;
+    }
+
+    .rescue .go { color: var(--rescue); }
+    .orbit .go { color: var(--orbit); }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Two games, one page</p>
+      <h1>Jacob's Games</h1>
+      <p class="lede">Build a rescue robot, or dash through orbit in VR. Both run in the browser.</p>
+    </header>
+    <main class="games">
+      <a class="card rescue" href="rescue-bot/">
+        <span class="tag">Workshop</span>
+        <h2>Rescue Bot Workshop</h2>
+        <p>Build robots for snowstorms, mountains, rivers and rescues.</p>
+        <span class="go">Open the workshop</span>
+      </a>
+      <a class="card orbit" href="orbit-dash-vr/">
+        <span class="tag">WebXR</span>
+        <h2>Orbit Dash VR</h2>
+        <p>A WebXR game. Open it in the Meta Quest browser and tap Enter VR.</p>
+        <span class="go">Launch Orbit Dash</span>
+      </a>
+    </main>
+    <footer>Jacob's Games</footer>
+  </div>
+</body>
+</html>
