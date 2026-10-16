@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jacob's Games</title>
-  <meta name="description" content="Rescue Bot Workshop and Orbit Dash VR — two browser games by Jacob.">
+  <meta name="description" content="Rescue Bot Workshop, Orbit Dash VR, and Mech Forge VR — three browser games by Jacob.">
   <style>
     :root {
       color-scheme: dark;
@@ -75,6 +75,11 @@
 
     @media (min-width: 760px) {
       .games { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 980px) {
+      .wrap { width: min(1180px, calc(100% - 32px)); }
+      .games { grid-template-columns: 1fr 1fr 1fr; }
     }
 
     .card {
@@ -162,6 +167,23 @@
     .rescue .go { color: var(--rescue); }
     .orbit .go { color: var(--orbit); }
 
+    .games > .card:nth-child(3) {
+      background:
+        linear-gradient(160deg, rgba(57, 215, 255, 0.14), transparent 46%),
+        linear-gradient(180deg, #1b2a38, #0b0f14 72%);
+      border-color: rgba(57, 215, 255, 0.4);
+    }
+
+    .games > .card:nth-child(3):hover,
+    .games > .card:nth-child(3):focus-visible { border-color: #39d7ff; }
+
+    .games > .card:nth-child(3) .tag {
+      color: #102028;
+      background: #39d7ff;
+    }
+
+    .games > .card:nth-child(3) .go { color: #39d7ff; }
+
     footer {
       margin-top: 28px;
       color: var(--muted);
@@ -172,9 +194,9 @@
 <body>
   <div class="wrap">
     <header>
-      <p class="eyebrow">Two games, one page</p>
+      <p class="eyebrow">Three games, one page</p>
       <h1>Jacob's Games</h1>
-      <p class="lede">Build a rescue robot, or dash through orbit in VR. Both run in the browser.</p>
+      <p class="lede">Build a rescue robot, dash through orbit, or forge a mech and pilot it. All three run in the browser.</p>
     </header>
     <main class="games">
       <a class="card rescue" href="rescue-bot/">
@@ -188,6 +210,12 @@
         <h2>Orbit Dash VR</h2>
         <p>A WebXR game. Open it in the Meta Quest browser and tap Enter VR.</p>
         <span class="go">Launch Orbit Dash</span>
+      </a>
+      <a class="card" href="mech-forge-vr/">
+        <span class="tag">WebXR</span>
+        <h2>Mech Forge VR</h2>
+        <p>Build a rescue robot in a 3D hangar, then pilot it through glacier, city and desert rescues. Open in the Meta Quest browser and tap Enter VR.</p>
+        <span class="go">Launch Mech Forge</span>
       </a>
     </main>
     <footer>Jacob's Games</footer>
